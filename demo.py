@@ -40,7 +40,7 @@ def run(seq, num, rect_dict_1, rect_dict_2, rect_dict_3, frame, thresh=None, thr
             next_dict_2 = get_frame_data(rect_dict_2, i + 1)
             next_dict_3 = get_frame_data(rect_dict_3, i + 1)
 
-            for k in next_dict_2:  # 对trades本帧的目标与transtrack做匹配
+            for k in next_dict_2:  # mattching the current frame between m2 and m3
                 tt = [k[1:5] for i in next_dict_3 if cal_iou(k[1:5], i[1:5]) > 0.6]
                 if len(tt) == 0:
                     continue
